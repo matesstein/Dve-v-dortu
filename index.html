@@ -479,21 +479,29 @@
       gap: 16px;
       overflow: hidden;
       width: 100%;
+      min-height: 760px;
+    }
+
+    #cake-view {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 10px;
+      min-height: 0;
     }
 
     .detail-body {
       display: grid;
       grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
       gap: 16px;
-      min-height: 0;
+      min-height: 600px;
     }
 
     .photo-wrap {
       position: relative;
       border-radius: 20px;
       overflow: hidden;
-      min-height: 0;
-      height: 100%;
+      min-height: 600px;
+      height: 600px;
       background:
         radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.75), transparent 45%),
         linear-gradient(180deg, #fff9f2 0%, #fff2e7 100%);
@@ -538,8 +546,10 @@
       list-style: none;
       display: grid;
       grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, minmax(0, 1fr));
       gap: 12px;
-      overflow-y: auto;
+      height: 100%;
+      overflow: hidden;
       padding-right: 2px;
     }
 
@@ -608,6 +618,16 @@
 
       .detail-body {
         grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .detail {
+        min-height: 0;
+      }
+
+      .tiles {
+        grid-template-rows: none;
+        height: auto;
       }
 
       .tiles {
@@ -716,10 +736,10 @@
       {
         emoji: "🥥",
         name: "Raffaelo s mangem",
-        description: "Mandlový korpus, jemný kokosovo-čokoládový krém a mangové pyré.",
+        description: "Mandlový korpus, jemný kokosový krém s bílou čokoládou, mango a křupavá vrstva.",
         base: "Mandlový korpus",
         cream: "Krém z bílé čokolády, smetany a kokosu",
-        fruit: "Mangové pyré",
+        fruit: "Mangové kompoté",
         extras: "Čokoládovo-kokosová křupka",
         wholeImage: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=1400&q=80",
         cutImage: "images/Raffaelo_s_mangem.jpeg"
@@ -727,7 +747,7 @@
       {
         emoji: "🍓",
         name: "Piškot, šlehačka & jahody",
-        description: "Lehký ovocný dort s vanilkovým piškotem, lehkým krémem a jahodama.",
+        description: "Lehký ovocný dort s vanilkovým piškotem, lehkým krémem a jahodami.",
         base: "Vanilkový piškot",
         cream: "Šlehačka s mascarpone",
         fruit: "Čerstvé jahody / jahodové kompoté",
@@ -737,25 +757,25 @@
       },
       {
         emoji: "🍯",
-        name: "Karamel světlý",
-        description: "Nadýchanější karamelový dort s mandlovým korpusem a křupkami.",
+        name: "Karamel",
+        description: "Jemný, nadýchaný, sladký karamelový dort s mandlovým korpusem, karamelový šlehaný krém s křupavou vrstvou uvnitř.",
         base: "Mandlový korpus",
         cream: "Karamelový šlehaný krém",
         fruit: "Bez ovoce",
-        extras: "Křupky uvnitř",
+        extras: "Karamelová křupavá vrstva",
         wholeImage: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1400&q=80",
         cutImage: "images/Karamel_svetly.jpeg"
       },
       {
         emoji: "💗",
         name: "Malina & pistácie",
-        description: "Spojení malinového rozvaru, pistáciového krému a vláčného piškotu.",
-        base: "Vláčný piškot",
+        description: "Dort s nadýchaným piškotem, malinami, jemným pistáciovým krém a malinovou mousse.",
+        base: "Vanilkový piškot",
         cream: "Jemný pistáciový krém",
-        fruit: "Malinový rozvar",
-        extras: "Pistácie",
+        fruit: "Malinové kompoté",
+        extras: "Malinová mousse",
         wholeImage: "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&w=1400&q=80",
-        cutImage: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=1400&q=80"
+        cutImage: "images/Malina_pistacie.jpeg"
       },
       {
         emoji: "🍏",
@@ -770,7 +790,7 @@
       },
       {
         emoji: "🍋",
-        name: "Borůvková-citron",
+        name: "Borůvka-citron",
         description: "Svěží vanilkovo-citronový dort s borůvkovým rozvarem a pěnou.",
         base: "Lehký vanilkovo-citronový korpus",
         cream: "Smetanový krém",
